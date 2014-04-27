@@ -1,4 +1,4 @@
-WebJar for Semantic
+WebJar for Semantic-UI
 
 More info: http://webjars.org
 
