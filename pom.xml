@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>Semantic-UI</artifactId>
-    <version>0.20-SNAPSHOT</version>
+    <version>0.19.0-1-SNAPSHOT</version>
     <name>Semantic</name>
     <description>WebJar for Semantic-UI</description>
     <url>http://webjars.org</url>
@@ -49,6 +49,16 @@
         <upstream.version>0.19.0</upstream.version>
         <upstream.url>https://github.com/Semantic-Org/Semantic-UI/releases/download/${upstream.version}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <requirejs>
+            {
+                "paths": {
+                    "Semantic-UI": "packaged/javascript/semantic"
+                },
+                "shim": {
+                    "Semantic-UI": ["jquery"]
+                }
+            }
+        </requirejs>
     </properties>
 
     <build>
