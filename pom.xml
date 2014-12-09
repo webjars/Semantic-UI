@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>Semantic-UI</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.2.0</version>
     <name>Semantic</name>
     <description>WebJar for Semantic-UI</description>
     <url>http://webjars.org</url>
@@ -41,7 +41,7 @@
         <url>http://github.com/webjars/Semantic-UI</url>
         <connection>scm:git:https://github.com/webjars/Semantic-UI.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/Semantic-UI.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>Semantic-UI-1.2.0</tag>
     </scm>
 
     <properties>
