@@ -52,7 +52,7 @@
         <requirejs>
             {
                 "paths": {
-                    "Semantic-UI": "packaged/javascript/semantic"
+                    "Semantic-UI": "semantic"
                 },
                 "shim": {
                     "Semantic-UI": ["jquery"]
