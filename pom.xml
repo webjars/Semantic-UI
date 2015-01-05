@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>Semantic-UI</artifactId>
-    <version>1.5.3-SNAPSHOT</version>
+    <version>1.5.2-1-SNAPSHOT</version>
     <name>Semantic</name>
     <description>WebJar for Semantic-UI</description>
     <url>http://webjars.org</url>
@@ -48,7 +48,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstream.version>1.5.2</upstream.version>
         <upstream.url>https://github.com/Semantic-Org/Semantic-UI/archive/${upstream.version}</upstream.url>
-        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
                 "paths": {
