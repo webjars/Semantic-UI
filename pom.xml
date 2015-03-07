@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>Semantic-UI</artifactId>
-    <version>1.8.2-SNAPSHOT</version>
+    <version>1.11.2-SNAPSHOT</version>
     <name>Semantic</name>
     <description>WebJar for Semantic-UI</description>
     <url>http://webjars.org</url>
@@ -46,7 +46,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>1.8.1</upstream.version>
+        <upstream.version>1.11.2</upstream.version>
         <upstream.url>https://github.com/Semantic-Org/Semantic-UI/archive/${upstream.version}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
@@ -93,12 +93,12 @@
                         </goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}/zip" />
-                                <echo message="moving resources" />
-                                <mkdir dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist" />
+                                <echo message="unzip archive"/>
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}/zip"/>
+                                <echo message="moving resources"/>
+                                <mkdir dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist"/>
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist" />
+                                    <fileset dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist"/>
                                 </move>
                             </target>
                         </configuration>
@@ -108,13 +108,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
+                <version>2.5.1</version>
             </plugin>
 
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.1</version>
+                <version>1.6.5</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
