@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>Semantic-UI</artifactId>
-    <version>1.11.2-SNAPSHOT</version>
+    <version>1.11.2</version>
     <name>Semantic</name>
     <description>WebJar for Semantic-UI</description>
     <url>http://webjars.org</url>
@@ -41,7 +41,7 @@
         <url>http://github.com/webjars/Semantic-UI</url>
         <connection>scm:git:https://github.com/webjars/Semantic-UI.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/Semantic-UI.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>Semantic-UI-1.11.2</tag>
     </scm>
 
     <properties>
@@ -93,12 +93,12 @@
                         </goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}/zip"/>
-                                <echo message="moving resources"/>
-                                <mkdir dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}/zip" />
+                                <echo message="moving resources" />
+                                <mkdir dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist"/>
+                                    <fileset dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist" />
                                 </move>
                             </target>
                         </configuration>
