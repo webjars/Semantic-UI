@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>Semantic-UI</artifactId>
-    <version>2.3-SNAPSHOT</version>
+    <version>2.2.2-SNAPSHOT</version>
     <name>Semantic</name>
     <description>WebJar for Semantic-UI</description>
     <url>http://webjars.org</url>
@@ -51,8 +51,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>2.2</upstream.version>
-        <upstream.url>https://github.com/Semantic-Org/Semantic-UI/archive/${upstream.version}</upstream.url>
+        <upstream.url>https://github.com/Semantic-Org/Semantic-UI/archive/${version.unsnapshot}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
@@ -69,6 +68,20 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>com.jamesward</groupId>
+                <artifactId>unsnapshot-maven-plugin</artifactId>
+                <version>0.1</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unsnapshot</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>wagon-maven-plugin</artifactId>
                 <version>1.0-beta-5</version>
@@ -80,7 +93,7 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>${upstream.version}.zip</fromFile>
+                            <fromFile>${version.unsnapshot}.zip</fromFile>
                             <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
                         </configuration>
                     </execution>
@@ -101,9 +114,9 @@
                                 <echo message="unzip archive" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}/zip" />
                                 <echo message="moving resources" />
-                                <mkdir dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist" />
+                                <mkdir dir="${project.build.directory}/zip/Semantic-UI-${version.unsnapshot}/dist" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/zip/Semantic-UI-${upstream.version}/dist" />
+                                    <fileset dir="${project.build.directory}/zip/Semantic-UI-${version.unsnapshot}/dist" />
                                 </move>
                             </target>
                         </configuration>
